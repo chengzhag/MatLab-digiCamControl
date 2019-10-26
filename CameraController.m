@@ -419,7 +419,7 @@ classdef CameraController < handle
             % Focus(Num,Mode,Wait)  -time delay per step (sec)
             %Starts live view, lens can be in MF|AF, camera can be in M|A..
             %Step size can be set in: File>Settings>Live view
-            C.Cmd('LiveViewWnd_Show') %can skip if LiveView is on
+            C.Cmd('LiveViewWnd_Show'); %can skip if LiveView is on
             if nargin<2 || isempty(Num)
                 [status,err] = C.Cmd('LiveView_Focus'); %auto focus, user must wait for focus to finish manually
             elseif Num ~= floor(Num)
